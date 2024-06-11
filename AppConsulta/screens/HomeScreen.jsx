@@ -26,7 +26,7 @@ export default function HomeScreen({ navigation }) {
             <View style={styles.buts}>
             <Button
                 title="Alocações"
-                onPress={() => navigation.navigate('Search')}
+                onPress={() => navigation.navigate('Alocacoes')}
                 color={'#CC0000'}
             />
             </View>
@@ -34,7 +34,7 @@ export default function HomeScreen({ navigation }) {
             <View style={styles.buts}>
             <Button
                 title="Detalhes"
-                onPress={() => navigation.navigate('Search')}
+                onPress={() => navigation.navigate('Detalhes')}
                 color={'#CC0000'}
             />
             </View>

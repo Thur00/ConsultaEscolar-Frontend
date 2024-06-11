@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { View, Button, Text, FlatList, StyleSheet } from 'react-native';
 
 // Define a URL base da API, ajuste conforme necessário
-const API_URL = "http://10.136.37.10:3000/api"; // Ajuste para o seu IP
+const API_URL = "http://10.136.37.10:3000/consulta"; // Ajuste para o seu IP
 
 // Componente principal da tela SearchScreen
 export default function ProfessoresScreen() {
@@ -14,6 +14,7 @@ export default function ProfessoresScreen() {
     // Função para buscar todos os produtos na API
     const fetchAllProfessores = async () => {
         try {
+            
             const response = await fetch(`${API_URL}/professores`); // Faz a requisição GET para a API
             if (!response.ok) {
                 const errorResponse = await response.text(); // Lê a resposta de erro
@@ -31,7 +32,7 @@ export default function ProfessoresScreen() {
     return (
         <View style={styles.container}>
             {/* Botão para buscar todos os professores */}
-            <Button title="Consulta" onPress={fetchAllProfessores}  color={'#CC0000'} />
+            <Button title="Consultar" onPress={fetchAllProfessores} color={'#CC0000'} />
             {/* Exibe a lista de professores, se existir */}
             {professores.length > 0 && (
                 <FlatList

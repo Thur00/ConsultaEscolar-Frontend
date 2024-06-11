@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { View, Button, Text, FlatList, StyleSheet } from 'react-native';
 
 // Define a URL base da API, ajuste conforme necessário
-const API_URL = "http://10.136.37.10:3000/api"; // Ajuste para o seu IP
+const API_URL = "http://10.136.37.10:3000/consulta"; // Ajuste para o seu IP
 
 // Componente principal da tela SearchScreen
 export default function AlocacoesScreen() {
@@ -12,9 +12,9 @@ export default function AlocacoesScreen() {
     const [error, setError] = useState(null); // Estado para erros
 
     // Função para buscar todos os produtos na API
-    const fetchAllProfessores = async () => {
+    const fetchAllAlocacoes = async () => {
         try {
-            const response = await fetch('${API_URL}/alocacoes'); // Faz a requisição GET para a API
+            const response = await fetch(`${API_URL}/alocacoes`); // Faz a requisição GET para a API
             if (!response.ok) {
                 const errorResponse = await response.text(); // Lê a resposta de erro
                 throw new Error(errorResponse); // Lança um erro com a resposta
@@ -31,7 +31,7 @@ export default function AlocacoesScreen() {
     return (
         <View style={styles.container}>
             {/* Botão para buscar todos os professores */}
-            <Button title="Consulta" onPress={fetchAllAlocacoes} color={'#CC0000'} />
+            <Button title="Consultar" onPress={fetchAllAlocacoes} color={'#CC0000'} />
             {/* Exibe a lista de professores, se existir */}
             {alocacoes.length > 0 && (
                 <FlatList

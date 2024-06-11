@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { View, Button, Text, FlatList, StyleSheet } from 'react-native';
 
 // Define a URL base da API, ajuste conforme necessário
-const API_URL = "http://10.136.37.10:3000/api"; // Ajuste para o seu IP
+const API_URL = "http://10.136.37.10:3000/consulta"; // Ajuste para o seu IP
 
 // Componente principal da tela SearchScreen
 export default function SalasScreen() {
