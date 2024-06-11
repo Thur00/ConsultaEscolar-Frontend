@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { View, TextInput, Button, Text, FlatList, StyleSheet } from 'react-native';
 
 // Define a URL base da API, ajuste conforme necessário
-const API_URL = "http://10.136.37.10:3000/consulta"; // Ajuste para o seu IP
+const API_URL = "http://10.136.42.70:3000/consulta"; // Ajuste para o seu IP
 
 // Componente principal da tela SearchScreen
 export default function DetalhesScreen() {
@@ -74,6 +74,7 @@ export default function DetalhesScreen() {
                     <Text>Período: {detalhe.período}</Text>
                 </View>
             )}
+            {console.log(detalhe)}
             {detalhes.length > 0 && (
                 <FlatList
                     data={detalhes} // Dados da lista de professores

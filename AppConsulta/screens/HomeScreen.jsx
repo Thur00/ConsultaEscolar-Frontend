@@ -26,7 +26,7 @@ export default function HomeScreen({ navigation }) {
             <View style={styles.buts}>
             <Button
                 title="Alocações"
-                onPress={() => navigation.navigate('Alocacoes')}
+                onPress={() => navigation.navigate('Alocações')}
                 color={'#CC0000'}
             />
             </View>

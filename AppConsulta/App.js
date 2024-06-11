@@ -25,7 +25,7 @@ export default function App() {
         {/* Define a tela "Salas" como parte do Stack Navigator */}
         <Stack.Screen name="Salas" component={SalasScreen} />
         {/* Define a tela "Alocações" como parte do Stack Navigator */}
-        <Stack.Screen name="Alocacoes" component={AlocacoesScreen} />
+        <Stack.Screen name="Alocações" component={AlocacoesScreen} />
         {/* Define a tela "Detalhes" como parte do Stack Navigator */}
         <Stack.Screen name="Detalhes" component={DetalhesScreen} />
       </Stack.Navigator>
