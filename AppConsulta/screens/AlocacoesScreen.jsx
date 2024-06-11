@@ -20,7 +20,7 @@ export default function AlocacoesScreen() {
                 throw new Error(errorResponse); // Lança um erro com a resposta
             }
             const data = await response.json(); // Converte a resposta para JSON
-            setAlocacoes(data.alocacoes); // Atualiza o estado com a lista de professores
+            setAlocacoes(data); // Atualiza o estado com a lista de professores
             setError(null); // Reseta o estado de erro
         } catch (error) {
             console.error("Erro ao buscar todos as alocações:", error); // Loga o erro no console
@@ -40,10 +40,10 @@ export default function AlocacoesScreen() {
                     renderItem={({ item }) => (
                         <View style={styles.alocacoes}>
                             <Text>ID: {item.id}</Text>
-                            <Text>ID Prof: {item.IDProf}</Text>
-                            <Text>ID sala: {item.IDSala}</Text>
-                            <Text>Dia semana: {item.diaSemana}</Text>
-                            <Text>Período: {item.periodo}</Text>
+                            <Text>ID Prof: {item.id_prof}</Text>
+                            <Text>ID sala: {item.id_sala}</Text>
+                            <Text>Dia semana: {item.dia_semana}</Text>
+                            <Text>Período: {item.período}</Text>
                         </View>
                     )}
                 />
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
         padding: 20, // Espaçamento interno
         backgroundColor: "#fff", // Cor de fundo branca
     },
-    professores: {
+    alocacoes: {
         padding: 10, // Espaçamento interno
         marginTop: 20, // Margem superior
         borderBottomColor: "#ccc", // Cor da borda inferior

@@ -14,14 +14,13 @@ export default function ProfessoresScreen() {
     // Função para buscar todos os produtos na API
     const fetchAllProfessores = async () => {
         try {
-            
             const response = await fetch(`${API_URL}/professores`); // Faz a requisição GET para a API
             if (!response.ok) {
                 const errorResponse = await response.text(); // Lê a resposta de erro
                 throw new Error(errorResponse); // Lança um erro com a resposta
             }
             const data = await response.json(); // Converte a resposta para JSON
-            setProfessores(data.professores); // Atualiza o estado com a lista de professores
+            setProfessores(data); // Atualiza o estado com a lista de professores
             setError(null); // Reseta o estado de erro
         } catch (error) {
             console.error("Erro ao buscar todos os professores:", error); // Loga o erro no console
@@ -42,7 +41,7 @@ export default function ProfessoresScreen() {
                         <View style={styles.professores}>
                             <Text>ID: {item.id}</Text>
                             <Text>Nome: {item.nome}</Text>
-                            <Text>Quantidade: {item.telefone}</Text>
+                            <Text>Telefone: {item.telefone}</Text>
                         </View>
                     )}
                 />

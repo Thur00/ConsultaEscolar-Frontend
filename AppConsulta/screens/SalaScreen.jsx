@@ -20,7 +20,7 @@ export default function SalasScreen() {
                 throw new Error(errorResponse); // Lança um erro com a resposta
             }
             const data = await response.json(); // Converte a resposta para JSON
-            setSalas(data.salas); // Atualiza o estado com a lista de professores
+            setSalas(data); // Atualiza o estado com a lista de professores
             setError(null); // Reseta o estado de erro
         } catch (error) {
             console.error("Erro ao encontrar todas as salas:", error); // Loga o erro no console
@@ -41,7 +41,7 @@ export default function SalasScreen() {
                     renderItem={({ item }) => (
                         <View style={styles.salas}>
                             <Text>ID: {item.id}</Text>
-                            <Text>Nome: {item.nome}</Text>
+                            <Text>Nome: {item.nomesala}</Text>
                             <Text>Bloco: {item.bloco}</Text>
                         </View>
                     )}
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
         padding: 20, // Espaçamento interno
         backgroundColor: "#fff", // Cor de fundo branca
     },
-    professores: {
+    salas: {
         padding: 10, // Espaçamento interno
         marginTop: 20, // Margem superior
         borderBottomColor: "#ccc", // Cor da borda inferior

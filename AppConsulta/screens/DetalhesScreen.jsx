@@ -20,7 +20,7 @@ export default function DetalhesScreen() {
                 throw new Error(errorResponse); // Lança um erro com a resposta
             }
             const data = await response.json(); // Converte a resposta para JSON
-            setDetalhes(data.detalhes); // Atualiza o estado com a lista de professores
+            setDetalhes(data); // Atualiza o estado com a lista de professores
             setError(null); // Reseta o estado de erro
         } catch (error) {
             console.error("Erro ao encontrar todos os detalhes:", error); // Loga o erro no console
@@ -40,11 +40,11 @@ export default function DetalhesScreen() {
                     keyExtractor={(item) => item.id.toString()} // Função para extrair a chave de cada item
                     renderItem={({ item }) => (
                         <View style={styles.detalhes}>
-                            <Text>Nome Prosfessor: {item.nomeprof}</Text>
-                            <Text>Nome Sala: {item.nomesala}</Text>
+                            <Text>Prosfessor: {item.professor}</Text>
+                            <Text>Sala: {item.sala}</Text>
                             <Text>Bloco: {item.bloco}</Text>
-                            <Text>Dia da semana: {item.diasemana}</Text>
-                            <Text>Periodo: {item.periodo}</Text>
+                            <Text>Dia da semana: {item.dia}</Text>
+                            <Text>Período: {item.período}</Text>
                         </View>
                     )}
                 />
