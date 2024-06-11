@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { View, Button, Text, FlatList, StyleSheet } from 'react-native';
 
 // Define a URL base da API, ajuste conforme necessário
-const API_URL = "http://10.136.37.10:3000/consulta"; // Ajuste para o seu IP
+const API_URL = "http://10.136.42.32:3000/consulta"; // Ajuste para o seu IP
 
 // Componente principal da tela SearchScreen
 export default function ProfessoresScreen() {
@@ -39,9 +39,22 @@ export default function ProfessoresScreen() {
                     keyExtractor={(item) => item.id.toString()} // Função para extrair a chave de cada item
                     renderItem={({ item }) => (
                         <View style={styles.professores}>
-                            <Text>ID: {item.id}</Text>
-                            <Text>Nome: {item.nome}</Text>
-                            <Text>Telefone: {item.telefone}</Text>
+
+                            <View style={styles.box}>
+                            <Text style={styles.texto}>ID: </Text> 
+                            <Text>{item.id}</Text>
+                            </View>
+
+                            <View style={styles.box}>
+                            <Text style={styles.texto}>Nome: </Text> 
+                            <Text>{item.nome}</Text>
+                            </View>
+
+                            <View style={styles.box}>
+                            <Text style={styles.texto}>Telefone: </Text>
+                            <Text>{item.telefone}</Text>
+                            </View>
+
                         </View>
                     )}
                 />
@@ -62,11 +75,18 @@ const styles = StyleSheet.create({
     professores: {
         padding: 10, // Espaçamento interno
         marginTop: 20, // Margem superior
-        borderBottomColor: "#ccc", // Cor da borda inferior
-        borderBottomWidth: 1, // Largura da borda inferior
+        borderColor: "#ccc", // Cor da borda inferior
+        borderWidth: 1, // Largura da borda inferior
     },
     error: {
         color: 'red', // Cor do texto do erro
         marginTop: 20, // Margem superior
+    },
+    texto: {
+        fontWeight: "bold",
+    },
+    box: {
+        display: "flex",
+        flexDirection: "row",
     },
 });

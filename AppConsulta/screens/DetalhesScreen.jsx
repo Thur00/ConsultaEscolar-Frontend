@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { View, TextInput, Button, Text, FlatList, StyleSheet } from 'react-native';
 
 // Define a URL base da API, ajuste conforme necessário
-const API_URL = "http://10.136.37.10:3000/consulta"; // Ajuste para o seu IP
+const API_URL = "http://10.136.42.32:3000/consulta"; // Ajuste para o seu IP
 
 // Componente principal da tela SearchScreen
 export default function DetalhesScreen() {
@@ -80,11 +80,32 @@ export default function DetalhesScreen() {
                     keyExtractor={(item) => item.id_prof.toString()} // Função para extrair a chave de cada item
                     renderItem={({ item }) => (
                         <View style={styles.detalhes}>
-                            <Text>Prosfessor: {item.professor}</Text>
-                            <Text>Sala: {item.sala}</Text>
-                            <Text>Bloco: {item.bloco}</Text>
-                            <Text>Dia da semana: {item.dia}</Text>
-                            <Text>Período: {item.período}</Text>
+                            
+                            <View style={styles.box}>
+                            <Text style={styles.texto}>Professor: </Text>
+                            <Text>{item.professor}</Text>
+                            </View>
+
+                            <View style={styles.box}>
+                            <Text style={styles.texto}>Sala: </Text>
+                            <Text>{item.sala}</Text>
+                            </View>
+
+                            <View style={styles.box}>
+                            <Text style={styles.texto}>Bloco: </Text>
+                            <Text>{item.bloco}</Text>
+                            </View>
+
+                            <View style={styles.box}>
+                            <Text style={styles.texto}>Dia da semana: </Text>
+                            <Text>{item.dia}</Text>
+                            </View>
+
+                            <View style={styles.box}>
+                            <Text style={styles.texto}>Período: </Text>
+                            <Text>{item.período}</Text>
+                            </View>
+
                         </View>
                     )}
                 />
@@ -105,8 +126,8 @@ const styles = StyleSheet.create({
     detalhes: {
         padding: 10, // Espaçamento interno
         marginTop: 20, // Margem superior
-        borderBottomColor: "#ccc", // Cor da borda inferior
-        borderBottomWidth: 1, // Largura da borda inferior
+        borderColor: "#ccc", // Cor da borda inferior
+        borderWidth: 1, // Largura da borda inferior
     },
     error: {
         color: 'red', // Cor do texto do erro
@@ -118,5 +139,12 @@ const styles = StyleSheet.create({
         borderWidth: 1, // Largura da borda
         marginBottom: 10, // Margem inferior
         padding: 10, // Espaçamento interno
+    },
+    texto: {
+        fontWeight: "bold",
+    },
+    box: {
+        display: "flex",
+        flexDirection: "row",
     },
 });
