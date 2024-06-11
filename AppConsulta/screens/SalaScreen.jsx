@@ -53,6 +53,7 @@ export default function SalasScreen() {
     );
 }
 
+
 // Estilos para os componentes da tela
 const styles = StyleSheet.create({
     container: {
