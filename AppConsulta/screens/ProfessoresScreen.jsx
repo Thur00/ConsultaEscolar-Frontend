@@ -41,18 +41,18 @@ export default function ProfessoresScreen() {
                         <View style={styles.professores}>
 
                             <View style={styles.box}>
-                            <Text style={styles.texto}>ID: </Text> 
-                            <Text>{item.id}</Text>
+                                <Text style={styles.texto}>ID: </Text>
+                                <Text>{item.id}</Text>
                             </View>
 
                             <View style={styles.box}>
-                            <Text style={styles.texto}>Nome: </Text> 
-                            <Text>{item.nome}</Text>
+                                <Text style={styles.texto}>Nome: </Text>
+                                <Text>{item.nome}</Text>
                             </View>
 
                             <View style={styles.box}>
-                            <Text style={styles.texto}>Telefone: </Text>
-                            <Text>{item.telefone}</Text>
+                                <Text style={styles.texto}>Telefone: </Text>
+                                <Text>{item.telefone}</Text>
                             </View>
 
                         </View>

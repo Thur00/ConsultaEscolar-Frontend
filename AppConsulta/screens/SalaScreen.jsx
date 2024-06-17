@@ -31,10 +31,10 @@ export default function SalasScreen() {
     return (
         <View style={styles.container}>
             {/* Botão para buscar todos os professores */}
-            <Button title="Consultar" onPress={fetchAllSalas} 
-            color={'#CC0000'}/>
+            <Button title="Consultar" onPress={fetchAllSalas}
+                color={'#CC0000'} />
             {/* Exibe a lista de professores, se existir */}
-            {salas.length > 0 && ( 
+            {salas.length > 0 && (
                 <FlatList
                     data={salas} // Dados da lista de professores
                     keyExtractor={(item) => item.id.toString()} // Função para extrair a chave de cada item
@@ -42,18 +42,18 @@ export default function SalasScreen() {
                         <View style={styles.salas}>
 
                             <View style={styles.box}>
-                            <Text style={styles.texto}>ID: </Text>
-                            <Text>{item.id}</Text>
+                                <Text style={styles.texto}>ID: </Text>
+                                <Text>{item.id}</Text>
                             </View>
 
                             <View style={styles.box}>
-                            <Text style={styles.texto}>Nome: </Text>
-                            <Text>{item.nomesala}</Text>
+                                <Text style={styles.texto}>Nome: </Text>
+                                <Text>{item.nomesala}</Text>
                             </View>
 
                             <View style={styles.box}>
-                            <Text style={styles.texto}>Bloco: </Text>
-                            <Text>{item.bloco}</Text>
+                                <Text style={styles.texto}>Bloco: </Text>
+                                <Text>{item.bloco}</Text>
                             </View>
                         </View>
                     )}
