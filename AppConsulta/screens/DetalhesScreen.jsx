@@ -161,6 +161,7 @@ const styles = StyleSheet.create({
     detalhes2: {
         padding: 10, // Espaçamento interno
         marginTop: 20, // Margem superior
+        marginBottom: 20, // Margem inferior
         borderColor: "#CC0000", // Cor da borda inferior
         borderWidth: 1, // Largura da borda inferior
     },
